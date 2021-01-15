@@ -369,7 +369,15 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonResetActionPerformed
 
     private void BotonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIgualActionPerformed
-        // BOTON IGUAL
+        // BOTON IGUAL // este boton se va a encargar de que operacion se pulso
+        double operando2 = Double.valueOf(display.getText());
+       
+        //Operacion suma
+        if(operacion.equals("+")){
+            operando1 += operando2;
+        }
+        // muestro el resultado en el display
+        display.setText(String.valueOf(operando1));
     }//GEN-LAST:event_BotonIgualActionPerformed
 
     private void Boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton1ActionPerformed
