@@ -24,6 +24,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     }
     
     // AQUI VAN LOS METODOS 
+    // Escribe numeros en pantalla 
     public void escribeNumeroEnPantalla(String numero){
      if (display.getText() == "0"){
          display.setText(numero);
@@ -31,6 +32,19 @@ public class VentanaCalculadora extends javax.swing.JFrame {
      else{
         display.setText(display.getText() + numero);
      }  
+    }
+    // La funcion que se encarga de trabajar con la operacion pulsada
+    
+    public void operacionPulsada(String _operacion){
+        
+        // Guardo el valor de la pantalla en la variable operando 1 
+       operando1 = Double.valueOf(display.getText());
+        
+       // pongo a 0 la pantalla 
+       display.setText("0");
+       
+       // asocio las variables 
+       operacion = _operacion;
     }
 
 
@@ -323,7 +337,7 @@ public class VentanaCalculadora extends javax.swing.JFrame {
 
     private void BotonMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMasActionPerformed
         // BOTON DE SUMA
-        
+        operacionPulsada("+");
     }//GEN-LAST:event_BotonMasActionPerformed
 
     private void BotonRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRestaActionPerformed
