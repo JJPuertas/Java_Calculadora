@@ -342,14 +342,17 @@ public class VentanaCalculadora extends javax.swing.JFrame {
 
     private void BotonRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRestaActionPerformed
         // BOTON DE RESTA
+        operacionPulsada("-");
     }//GEN-LAST:event_BotonRestaActionPerformed
 
     private void BotonXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonXActionPerformed
         // BOTON DE MULTIPLICAR
+        operacionPulsada("*");
     }//GEN-LAST:event_BotonXActionPerformed
 
     private void BotonDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonDivisionActionPerformed
         // BOTON DE DIVIDIR
+        operacionPulsada("/");
     }//GEN-LAST:event_BotonDivisionActionPerformed
 
     private void BotonRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRaizActionPerformed
@@ -358,14 +361,21 @@ public class VentanaCalculadora extends javax.swing.JFrame {
 
     private void BotonCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCuadradoActionPerformed
         // BOTON AL CUADRADO
+        operando1 = Double.valueOf(display.getText());
+        
+        operando1 = operando1 * operando1;
+        
+        display.setText(String.valueOf(operando1));
     }//GEN-LAST:event_BotonCuadradoActionPerformed
 
     private void BotonInfinitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInfinitoActionPerformed
         // BOTON INFINITO
+        display.setText("Pa´ que quieres el infinito.");
     }//GEN-LAST:event_BotonInfinitoActionPerformed
 
     private void BotonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonResetActionPerformed
         // BOTON RESET
+        display.setText("0");
     }//GEN-LAST:event_BotonResetActionPerformed
 
     private void BotonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIgualActionPerformed
@@ -375,6 +385,15 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         //Operacion suma
         if(operacion.equals("+")){
             operando1 += operando2;
+        }
+        if(operacion.equals("-")){
+            operando1 -= operando2;
+        }
+        if(operacion.equals("*")){
+            operando1 *= operando2;
+        }
+        if(operacion.equals("/")){
+            operando1 /= operando2;
         }
         // muestro el resultado en el display
         display.setText(String.valueOf(operando1));
